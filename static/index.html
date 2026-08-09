@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaBot - Intelligent FAQ AI Assistant</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="bot-avatar-header">
+          <i class="fa-solid fa-robot"></i>
+          <span class="status-indicator"></span>
+        </div>
+        <div class="brand-text">
+          <h1>NovaBot AI <span class="badge-tag">India 🇮🇳</span></h1>
+          <p>Intelligent Support Assistant (INR / ₹)</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <select id="themeSelector" class="btn btn-glass theme-select" title="Change Color Theme">
+          <option value="aurora">🌌 Aurora Violet</option>
+          <option value="emerald">🌿 Emerald Cyber</option>
+          <option value="sunset">🔥 Sunset Coral</option>
+          <option value="sapphire">💎 Sapphire Ocean</option>
+        </select>
+        <button id="faqModalBtn" class="btn btn-glass" title="Browse Knowledge Base">
+          <i class="fa-solid fa-book-open"></i> <span class="btn-text">FAQs</span>
+        </button>
+        <button id="addFaqBtn" class="btn btn-glass" title="Add New FAQ">
+          <i class="fa-solid fa-plus"></i> <span class="btn-text">Add FAQ</span>
+        </button>
+        <button id="analyticsBtn" class="btn btn-glass" title="View Bot Analytics">
+          <i class="fa-solid fa-chart-pie"></i> <span class="btn-text">Analytics</span>
+        </button>
+        <button id="clearChatBtn" class="btn btn-icon" title="Clear Chat">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="chat-viewport">
+      <!-- Chat Messages Scroll List -->
+      <div class="chat-history" id="chatHistory">
+        <!-- Welcome Card -->
+        <div class="welcome-card">
+          <div class="welcome-icon">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <h2>Welcome to NovaBot India FAQ Support! 🙏</h2>
+          <p>I use <strong>Natural Language Processing (NLTK)</strong> and <strong>TF-IDF Cosine Similarity</strong> to answer questions about orders, <strong>UPI / COD payments</strong>, <strong>shipping across India</strong>, and product warranties.</p>
+          <div class="features-pills">
+            <span><i class="fa-solid fa-indian-rupee-sign"></i> Rupee Currency (₹)</span>
+            <span><i class="fa-solid fa-truck-fast"></i> Pan-India Shipping</span>
+            <span><i class="fa-solid fa-bolt"></i> Instant Cosine Similarity</span>
+            <span><i class="fa-solid fa-microphone"></i> Voice Input</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Topic Recommendation Chips -->
+      <div class="quick-chips-wrapper">
+        <span class="chips-label"><i class="fa-solid fa-lightbulb"></i> Popular (India):</span>
+        <div class="quick-chips" id="quickChips">
+          <button class="chip" data-query="What payment methods do you accept in India?">💳 UPI & RuPay Payments</button>
+          <button class="chip" data-query="Do you offer Cash on Delivery across India?">💵 Cash on Delivery (COD)</button>
+          <button class="chip" data-query="What are your shipping options and delivery times across India?">🚚 Shipping & Delivery (₹)</button>
+          <button class="chip" data-query="What is your return and replacement policy in India?">🔄 Doorstep Returns</button>
+          <button class="chip" data-query="Do your products come with brand warranty in India?">🛡️ India Warranty</button>
+          <button class="chip" data-query="How do I contact human customer support in India?">📞 Customer Care (Toll Free)</button>
+        </div>
+      </div>
+
+      <!-- Input Bar -->
+      <div class="input-container">
+        <form id="chatForm" class="chat-form">
+          <button type="button" id="micBtn" class="btn-input-action" title="Voice Input (Speech to Text)">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+          <input 
+            type="text" 
+            id="userInput" 
+            placeholder="Ask a question in ₹ (e.g. 'Is Cash on Delivery available?' or 'How long is delivery in Mumbai?')" 
+            autocomplete="off" 
+            required
+          />
+          <button type="submit" id="sendBtn" class="btn-send" title="Send Question">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- FAQ Knowledge Base Modal -->
+  <div id="faqModal" class="modal-overlay">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-book-open"></i> FAQ Knowledge Base</h2>
+        <button class="modal-close" id="closeFaqModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="faq-controls">
+          <div class="search-box">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" id="faqSearchInput" placeholder="Search FAQs by question or keyword...">
+          </div>
+          <div class="category-tabs" id="categoryTabs">
+            <button class="tab-btn active" data-category="All">All</button>
+          </div>
+        </div>
+        <div class="faq-list" id="faqList">
+          <div class="loading-spinner"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading FAQs...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add FAQ Modal -->
+  <div id="addFaqModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-plus-circle"></i> Add New FAQ Entry</h2>
+        <button class="modal-close" id="closeAddFaqModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="addFaqForm">
+          <div class="form-group">
+            <label for="faqCategory">Category</label>
+            <select id="faqCategory" required>
+              <option value="Orders & Billing">Orders & Billing</option>
+              <option value="Shipping & Delivery">Shipping & Delivery</option>
+              <option value="Returns & Refunds">Returns & Refunds</option>
+              <option value="Product & Warranty">Product & Warranty</option>
+              <option value="Account & Security">Account & Security</option>
+              <option value="Technical Support">Technical Support</option>
+              <option value="General">General</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="faqQuestion">Question</label>
+            <input type="text" id="faqQuestion" placeholder="e.g. Can I order over the phone?" required>
+          </div>
+          <div class="form-group">
+            <label for="faqAnswer">Answer</label>
+            <textarea id="faqAnswer" rows="4" placeholder="Provide the accurate answer for this FAQ..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="faqKeywords">Keywords (comma separated)</label>
+            <input type="text" id="faqKeywords" placeholder="e.g. phone, phone order, call, hotline">
+          </div>
+          <div class="form-group">
+            <label for="faqTags">Tags (comma separated)</label>
+            <input type="text" id="faqTags" placeholder="e.g. ordering, support">
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-save"></i> Save FAQ & Re-train Bot</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Analytics Modal -->
+  <div id="analyticsModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-chart-line"></i> NLP Bot Performance Analytics</h2>
+        <button class="modal-close" id="closeAnalyticsModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card">
+            <i class="fa-solid fa-database stat-icon blue"></i>
+            <div class="stat-info">
+              <span class="stat-value" id="statTotalFaqs">0</span>
+              <span class="stat-label">Total FAQs Indexed</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-comments stat-icon purple"></i>
+            <div class="stat-info">
+              <span class="stat-value" id="statTotalQueries">0</span>
+              <span class="stat-label">Queries Processed</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-bullseye stat-icon green"></i>
+            <div class="stat-info">
+              <span class="stat-value" id="statAvgConfidence">0%</span>
+              <span class="stat-label">Avg Similarity Match</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-thumbs-up stat-icon yellow"></i>
+            <div class="stat-info">
+              <span class="stat-value" id="statPositiveRate">100%</span>
+              <span class="stat-label">User Satisfaction</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Cosine Similarity Breakdown</h3>
+        <div class="confidence-bars">
+          <div class="bar-group">
+            <div class="bar-label"><span>High Match (≥50%)</span> <span id="statHighMatches">0</span></div>
+            <div class="progress-bar"><div id="barHigh" class="progress fill-green" style="width: 0%"></div></div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-label"><span>Medium Match (25%-49%)</span> <span id="statMediumMatches">0</span></div>
+            <div class="progress-bar"><div id="barMedium" class="progress fill-yellow" style="width: 0%"></div></div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-label"><span>Low Match / Fallback (<25%)</span> <span id="statLowMatches">0</span></div>
+            <div class="progress-bar"><div id="barLow" class="progress fill-red" style="width: 0%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

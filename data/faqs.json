@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "category": "Orders & Billing",
+    "question": "How can I track my order status in India?",
+    "answer": "You can track your order by logging into your NovaTech India account and visiting the 'My Orders' section. You will also receive real-time WhatsApp & SMS updates along with a BlueDart/Delhivery tracking link.",
+    "keywords": ["track", "order", "status", "shipping", "package", "where is my order", "india", "bluedart", "delhivery"],
+    "tags": ["order", "tracking", "india"]
+  },
+  {
+    "id": 2,
+    "category": "Orders & Billing",
+    "question": "What payment methods do you accept in India?",
+    "answer": "We accept all Indian payment modes: UPI (Google Pay, PhonePe, Paytm, BHIM), Credit/Debit Cards (RuPay, Visa, MasterCard), Net Banking across 50+ Indian banks, Cash on Delivery (COD), and No-Cost EMI via major credit cards.",
+    "keywords": ["payment", "upi", "google pay", "phonepe", "paytm", "rupay", "credit card", "debit card", "cash on delivery", "cod", "netbanking", "emi", "inr", "rupees"],
+    "tags": ["billing", "payment", "upi", "cod"]
+  },
+  {
+    "id": 3,
+    "category": "Orders & Billing",
+    "question": "Do you offer Cash on Delivery (COD) across India?",
+    "answer": "Yes! Cash on Delivery (COD) is available for over 19,000+ PIN codes across India for orders up to ₹10,000. A nominal COD handling fee of ₹49 applies.",
+    "keywords": ["cash on delivery", "cod", "pay on delivery", "pin code", "cash", "handling fee"],
+    "tags": ["payment", "cod", "india"]
+  },
+  {
+    "id": 4,
+    "category": "Orders & Billing",
+    "question": "Can I modify or cancel my order after placing it?",
+    "answer": "Orders can be canceled or modified within 30 minutes of placing them. Go to 'My Orders' and select 'Cancel Order'. Once packed for dispatch, cancellations aren't possible, but you can reject the parcel upon delivery.",
+    "keywords": ["cancel", "modify", "change order", "edit order", "cancel order"],
+    "tags": ["order", "cancellation"]
+  },
+  {
+    "id": 5,
+    "category": "Shipping & Delivery",
+    "question": "What are your shipping options and delivery times across India?",
+    "answer": "We offer Standard Delivery (2-4 business days across metro cities like Mumbai, Delhi, Bengaluru, Chennai, Kolkata, Hyderabad, Pune) and Express Air Shipping (1-2 days). Standard shipping is FREE on orders above ₹499!",
+    "keywords": ["shipping time", "delivery", "standard shipping", "express delivery", "how long shipping", "cost", "free shipping", "rupees", "inr", "india"],
+    "tags": ["shipping", "delivery", "india"]
+  },
+  {
+    "id": 6,
+    "category": "Shipping & Delivery",
+    "question": "Do you ship to remote areas or tier-2/tier-3 cities in India?",
+    "answer": "Yes! We partner with Delhivery, BlueDart, XpressBees, and India Post (Speed Post) to cover almost every pin code in India, including tier-2, tier-3 cities and North-East regions.",
+    "keywords": ["remote areas", "tier 2", "tier 3", "speed post", "delhivery", "bluedart", "pin code", "pan india"],
+    "tags": ["shipping", "coverage"]
+  },
+  {
+    "id": 7,
+    "category": "Returns & Refunds",
+    "question": "What is your return and replacement policy in India?",
+    "answer": "We offer a 7-day hassle-free doorstep return & replacement guarantee for all products purchased in India. Our courier partner will pick up the item directly from your home free of charge.",
+    "keywords": ["return policy", "refund", "return item", "replacement", "7 days", "doorstep pickup", "free return"],
+    "tags": ["returns", "policy", "india"]
+  },
+  {
+    "id": 8,
+    "category": "Returns & Refunds",
+    "question": "How long does it take to get a refund into my bank account or UPI?",
+    "answer": "UPI refunds are processed instantly within 2 hours of doorstep pickup inspection! Bank Account / Credit Card refunds take 2-4 working days depending on your bank.",
+    "keywords": ["refund duration", "how long refund", "upi refund", "bank refund", "instant refund", "rupees"],
+    "tags": ["refund", "billing", "upi"]
+  },
+  {
+    "id": 9,
+    "category": "Product & Warranty",
+    "question": "Do your products come with brand warranty in India?",
+    "answer": "Yes! All NovaTech hardware products carry a 1-Year Official India Warranty with GST invoice. You can claim service at any of our 150+ authorized service centers across India.",
+    "keywords": ["warranty", "guarantee", "repair", "service center", "gst invoice", "brand warranty", "india warranty"],
+    "tags": ["warranty", "product", "service"]
+  },
+  {
+    "id": 10,
+    "category": "Product & Warranty",
+    "question": "Where can I download product manuals and software drivers?",
+    "answer": "All user manuals, quick start guides, and firmware/driver updates are available on our India Support Center page under 'Downloads & Documentation'.",
+    "keywords": ["manual", "download", "driver", "documentation", "firmware", "user guide"],
+    "tags": ["support", "documentation"]
+  },
+  {
+    "id": 11,
+    "category": "Account & Security",
+    "question": "How do I reset my account password?",
+    "answer": "Click 'Forgot Password' on the login screen, enter your registered email or Indian mobile number (+91), and we will send an OTP / reset link immediately.",
+    "keywords": ["reset password", "forgot password", "change password", "account recovery", "otp", "mobile number"],
+    "tags": ["account", "security"]
+  },
+  {
+    "id": 12,
+    "category": "Account & Security",
+    "question": "Is my personal and payment data secure?",
+    "answer": "Yes! We use 256-bit SSL encryption, RBI-compliant payment gateways (Razorpay & Cashfree), and strict 2-Factor Authentication (2FA) for all Indian bank transactions.",
+    "keywords": ["security", "privacy", "data safe", "encryption", "rbi", "razorpay", "cashfree", "2fa"],
+    "tags": ["security", "privacy"]
+  },
+  {
+    "id": 13,
+    "category": "Technical Support",
+    "question": "What should I do if my device stops working or won't turn on?",
+    "answer": "First, perform a hard reset by holding the power button for 10 seconds. Charge the device using the included 220V Indian standard wall adapter. If issues persist, visit your nearest NovaTech India Service Center or request a pick-and-drop repair.",
+    "keywords": ["device stopped working", "won't turn on", "not powering on", "troubleshooting", "broken device", "fix", "repair"],
+    "tags": ["technical", "troubleshooting"]
+  },
+  {
+    "id": 14,
+    "category": "Technical Support",
+    "question": "How do I contact human customer support in India?",
+    "answer": "Our India Customer Care team is available Monday to Saturday (9:00 AM - 8:00 PM IST). Call our Toll-Free Helpline at 1800-123-NOVA (1800-123-6682), WhatsApp us at +91 98765 43210, or email support.india@novatech.com.",
+    "keywords": ["human support", "contact support", "customer service", "agent", "phone number", "talk to human", "email support", "toll free", "whatsapp", "helpline"],
+    "tags": ["support", "contact", "india"]
+  }
+]
